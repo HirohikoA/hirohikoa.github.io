@@ -10,20 +10,76 @@
 body {
 	width: 100%;
 	height: 100%;
-	color: #00CED1;
-	background: #ffc940;
+	color: #000000;
+	background: #ff9933;
 	font-size: 1em;
 	font-family: Century Gothic, sans-serif;
 	line-height: 135%;
 }
 
-a {
-	color: #7B68EE;
+header, footer {
+	width: 100%;
+	background-color: #6666cc;
+	min-height: 50px;
+}
+
+@media (min-width: 500px){
+	.container-1, .container-2 {
+		display: flex;	
+	}
+
+	.container-1 {
+		justify-content: flex-start;
+		align-items: stretch;
+	}
+}
+
+.box {
+	margin: 5px;
+	flex-basis: 7%;
+}
+
+.box:hower {
+	
+}
+
+.container-2 {
+	padding: 20px;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.lb {
+	font-size: 1.5em;
+	flex-basis: 46%;
+	margin-bottom: 7px;
+	margin-right: 7px;
+	padding: 1em;
+	background-color: #ffffff;
+	border-left: 7px solid #990000;
+}
+
+.lb:hover {
+	background-color: #990000;
 	text-decoration: none;
-	transition: all.6s ease;
-	-moz-transition: all.6s ease;
-	-webkit-transition: all.6s ease;
-	-ms-transition: all.6s ease;
+	transition: 0.6s ease;
+	-moz-transition: 0.6s ease;
+	-webkit-transition: 0.6s ease;
+	-ms-transition: 0.6s ease;
+}
+
+.lb:active {
+	border-left: 7px solid #339933;
+	background-color: #339933;
+	transition: 0.01s;
+	-moz-transition: 0.01s;
+	-webkit-transition: 0.01s;
+	-ms-transition: 0.01s;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
 }
 
 a:hover {
@@ -36,7 +92,7 @@ a:hover {
 }
 
 a:active {
-	color: #FF00FF;
+	color: #FF0000;
 }
 
 img {
@@ -54,55 +110,4 @@ img {
 ::-moz-selection {
 		background: #7B68EE;
 		color:#fff;
-}
-
-header, footer {
-	width: 98%;
-	background-color: #274d7e;
-	min-height: 50px;
-}
-
-header {
-	border-bottom: 2px solid #05326d;
-	padding: 1%;
-}
-
-.wrapper {
-	display: grid;
-	grid-template-columns: 10% 10% 10%;
-	grid-gap: 1em;		
-}
-
-.wrapper > div {
-	padding: 1em;
-}
-
-.men:hover {
-	background-color: #05326d;
-	cursor: pointer;
-}
-
-.laba {
-	margin-left: 1%;
-	display: grid;
-	padding-left: 1%;
-	background-color: #ffffff;
-	border-left: 5px solid #f44268;
-	grid-gap: 1em;
-	grid-auto-rows: minmax(50px, auto);
-	
-}
-
-.laba:hover {
-	background-color: #f44268;
-	transition: all.6s ease;
-	-moz-transition: all.6s ease;
-	-webkit-transition: all.6s ease;
-	cursor: pointer;
-}
-
-footer {
-	padding: 1%;
-	border-top: 2px solid #05326d;
-	margin-bottom: 0;
 }
