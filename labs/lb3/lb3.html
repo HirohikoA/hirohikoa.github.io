@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		<script type="text/javascript" async
+		  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<style>
+    * {text-align: center; font-family: Century Gothic, Arial, Helvetica, sans-serif;}
+    p {font-size: 1.5em;}
+    P.text {text-align: start;}
+    u {font-weight: bold;}
+    li {text-align: start; font-size: 1.5em; margin-top: 10px;}
+		</style>
+</head>
+<body>
+  <h1>Невизначений інтеграл</h1>
+  <p class="text"><u>Означення</u>: Нехай функція $F$ — первісна для $f$ на $\large J$. Невизначеним інтегралом від функції $f$ називається сукупність усіх первісних цієї функції, тобто вираз
+  $$\int_{}^{} f(x) = F(x)+C,\quad x\in\large J$$
+  <p class="text">де $C\in\large R$ — довільна стала. <br> Функція $f$ називається підінтегральною функцією, $f(x)dx$ — підінтегральним виразом, $C$  — сталою інтегрування, $x$ — змінною інтегрування.
+  <h1>Властивості невизначеного інтеграла</h1>
+  <p class="text"> З означень первісної та невизначеного інтеграла випливають наступні властивості (за умов існування первісних та похідних на інтервалі $\large J$):
+    <ol>
+      <li>$\frac{d}{dx}\int_{}^{} f(x)dx=f(x),\quad x\in\large J$</li>
+      <li>$\int_{}^{} f'(x)dx=f(x)+C, \quad x\in\large J$</li>
+      <li>$ \forall\alpha\in \large R \normalsize, \;\alpha\neq 0 : \quad \int_{}^{} \alpha f(x)dx=\alpha\int_{}^{} f(x)dx, \quad x\in\large J$</li>
+      <li>$\int_{}^{} (f_1 (x)+f_2 (x))dx =\!\int_{}^{} f_1 (x)dx +\! \int_{}^{} f_2 (x)dx, \quad x \in\large J$</li>
+    </ol>
+</body>
+</html>
