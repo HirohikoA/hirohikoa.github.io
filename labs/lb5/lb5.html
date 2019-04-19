@@ -8,23 +8,22 @@
   <line stroke="#000" x1="200" x2="300" y1="200" y2="200">
     <animate id="LineOne" attributeName="x2"	from="200"	to="300" dur="0.5s"	animation-timing-function="ease-out"/>
   </line>
-  <circle id="c1" r="0" cx="200" cy="200" stroke="#000" stroke-width="1" fill="none" opacity="1">
+  <circle r="0" cx="200" cy="200" stroke="#000" stroke-width="1" fill="none" opacity="1">
     <animate id="CircOne" attributeName="r"	from="0"	to="100" begin="LineOne.end" dur="0.5s"	animation-timing-function="ease-out" fill="freeze"/>
+    <animate attributeName="opacity" from="1" to="0" begin="lr.end" dur="1s" fill="freeze"/>
   </circle>
-  <circle id="c2" r="0" cx="300" cy="200" stroke="#000" stroke-width="1" fill="none" opacity="1">
+  <circle r="0" cx="300" cy="200" stroke="#000" stroke-width="1" fill="none" opacity="1">
     <animate id="CircTwo" attributeName="r"	from="0"	to="100" begin="CircOne.end" dur="0.5s"	animation-timing-function="ease-out" fill="freeze"/>
+    <animate attributeName="opacity" from="1" to="0" begin="lr.end" dur="1s" fill="freeze"/>
   </circle>
-  <line stroke="#000" x1="200" x2="300" y1="200" y2="200" opacity="0">
+  <line stroke="#000" x1="200" x2="300" y1="200" y2="200" opacity="0"  transform="rotate(0 200 200)">
     <set attributeName="opacity"	from="0" to="1" begin="CircTwo.end"	fill="freeze"/>
-    <animate attributeName="x2"	from="200"	to="250" begin="CircTwo.end" dur="0.5s"	animation-timing-function="ease-out" fill="freeze"/>
-    <animate id="LineTwo" attributeName="y2"	from="200"	to="113.4" begin="CircTwo.end" dur="0.5s"	animation-timing-function="ease-out" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="-60 200 200" dur="1s" begin="CircTwo.end" fill="freeze"/>
   </line>
   <line stroke="#000" x1="300" x2="200" y1="200" y2="200" opacity="0">
     <set attributeName="opacity"	from="0" to="1" begin="CircTwo.end"	fill="freeze"/>
-    <animate attributeName="x2"	from="300"	to="250" begin="LineTwo.end" dur="0.5s"	animation-timing-function="ease-out" fill="freeze"/>
-    <animate id="LineTri" attributeName="y2"	from="200"	to="113.4" begin="LineTwo.end" dur="0.5s"	animation-timing-function="ease-out" fill="freeze"/>
+    <animateTransform id="lr" attributeName="transform" attributeType="XML" type="rotate" from="0 300 200" to="60 300 200" dur="1s" begin="CircTwo.end" fill="freeze"/>
   </line>
-  <set xlink:href="c1" atributeName="opacity" from="1" to="0" begin="LineTri.end"/>
 </svg>
 </body>
 </html>
