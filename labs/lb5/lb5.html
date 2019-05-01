@@ -8,6 +8,18 @@
   <line stroke="#000" x1="200" x2="300" y1="200" y2="200">
     <animate id="LineOne" attributeName="x2"	from="200"	to="300" dur="0.5s"	animation-timing-function="ease-out"/>
   </line>
+  <text x="246" y="210" opacity="0">
+    a
+    <animate attributeName="opacity" from="0" to="1" begin="lr.end-1" dur="1s" fill="freeze"/>
+  </text>
+  <text x="246" y="195" transform="rotate(-60 200 200)" opacity="0">
+    a
+    <animate attributeName="opacity" from="0" to="1" begin="lr.end-1" dur="1s" fill="freeze"/>
+  </text>
+  <text x="246" y="195" transform="rotate(60 300 200)" opacity="0">
+    a
+    <animate attributeName="opacity" from="0" to="1" begin="lr.end-1" dur="1s" fill="freeze"/>
+  </text>
   <circle r="0" cx="200" cy="200" stroke="#000" stroke-width="1" fill="none" opacity="1">
     <animate id="CircOne" attributeName="r"	from="0"	to="100" begin="LineOne.end" dur="0.5s"	animation-timing-function="ease-out" fill="freeze"/>
     <animate attributeName="opacity" from="1" to="0" begin="lr.end" dur="1s" fill="freeze"/>
