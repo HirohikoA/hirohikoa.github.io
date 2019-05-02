@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Plants</title>
+
+	<style>
+		body {
+			padding-top: 30px;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div>
+		<div class="container">
+			<table id="plants" class="table">
+	          <thead>
+	            <tr>
+	              <th>Название</th>
+	              <th>Вид</th>
+	              <th>Свет</th>
+	              <th>Цена</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	            <tr>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	              <td></td>
+	            </tr>
+	          </tbody>
+	        </table>
+		</div>
+	</div>
+</body>
+
+<script>
+	function ready() {
+	    function Main(API, tableId) {
+	      var XHRequest = 'onload' in new XMLHttpRequest() ? XMLHttpRequest : XDomainRequest;
+	      var xml = new XHRequest();
+
+	      xml.open('GET', API);
+
+	      xml.onload = function () {
+	          var xmlResponse = this.responseXML;
+	          var plantsTb = document.getElementById(tableId).tBodies[0];
+	          var tempArr = xmlResponse.getElementsByTagName('PLANT');
+	          console.log(tempArr);
+	          console.log(plantsTb);
+	          for (var i = 0; i < plantsTb.rows.length; i++) {
+	              var tableRow = plantsTb.rows[i];
+	              console.log(tableRow);
+	              console.log(tempArr);
+	              tableRow.cells[0].innerHTML = tempArr[i].getElementsByTagName('COMMON')[0].innerHTML;
+	              tableRow.cells[1].innerHTML = tempArr[i].getElementsByTagName('BOTANICAL')[0].innerHTML;
+	              tableRow.cells[2].innerHTML = tempArr[i].getElementsByTagName('LIGHT')[0].innerHTML;
+	              tableRow.cells[3].innerHTML = tempArr[i].getElementsByTagName('PRICE')[0].innerHTML;
+	          }
+	      };
+
+	      xml.send();
+	    }
+
+	    var API = 'plant_catalog.xml';
+	    var currencyTb = 'plants';
+	    Main(API, currencyTb);
+	}
+
+	document.addEventListener("DOMContentLoaded", ready);
+</script>
+
+</html>
