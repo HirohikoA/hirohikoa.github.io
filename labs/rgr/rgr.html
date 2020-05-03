@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+ google.load("visualization", "1.1", {packages:["wordtree"]});
+ google.setOnLoadCallback(drawChart);
+ function drawChart() {
+ var data = google.visualization.arrayToDataTable(
+ [ ['Фразы'],
+ ['Кафедра ІВМ перший корпус аудиторія 1316'],
+ ["Кафедра ІВМ другий корпус п'ятий поверх аудиторія 2501"],
+ ["Кафедра ІВМ другий корпус п'ятий поверх аудиторія 2503"],
+ ["Кафедра ІВМ другий корпус п'ятий поверх аудиторія 2503а"],
+ ["Кафедра ІВМ другий корпус п'ятий поверх аудиторія 2510"],
+ ["Кафедра ІВМ другий корпус п'ятий поверх аудиторія 2513"],
+ ['Кафедра ІВМ другий корпус четвертий поверх аудиторія 2412'],
+ ['Кафедра ІВМ другий корпус четвертий поверх кабінет завідуючого кафедрою'],
+ ['Кафедра ІВМ другий корпус четвертий поверх приміщення кафедри'],
+ ['Кафедра ІВМ другий корпус четвертий поверх бухгалтерія'],
+ ['Кафедра ІВМ третій корпус аудиторія 3302'],
+ ['Кафедра ІВМ сьомий корпус аудиторія 7306'],
+ ]
+ );
+ var options = {
+   maxFontSize: 14,
+   backgroundColor: '#F7F7F7',
+   wordtree: {
+      format: 'implicit',
+      word: 'Кафедра'
+    }
+ };
+ var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
+ chart.draw(data, options);
+ }
+ </script>
+  </head>
+
+  <body>
+<!--Div that will hold the pie chart-->
+    <div id="wordtree_basic"></div>
+  </body>
+</html>
